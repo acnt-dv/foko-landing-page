@@ -7,6 +7,9 @@ module.exports = {
             colors: {
                 foko: '#D9D7C9',
             },
+            margin: {
+                foko: '50px',
+            },
         },
     },
     plugins: [],
