@@ -1,12 +1,12 @@
 import Header from './Header';
 import Footer from './Footer';
 import Login from './Login';
-import Title from './Title';
 
 import {React, useState} from "react";
 import AboutUs from "./AboutUs";
 import FullPageMenu from "./FullPageMenu";
 import BackToTop from "./BackToTop";
+import FullScreenSlideshow from "./FullScreenSlideShow";
 
 export const Layout = () => {
     const [loggedIn, setLoggedIn] = useState(false);
@@ -19,7 +19,7 @@ export const Layout = () => {
             {loggedIn ?
                 <>
                     <Header className="z-10" menuToggle={toggleMenu}/>
-                    <Title onClick={() => setLoggedIn(!loggedIn)}/>
+                    <FullScreenSlideshow />
                     <AboutUs/>
                     <Footer className="z-20"/>
                     <FullPageMenu isOpen={menuOpen} onClose={toggleMenu} />

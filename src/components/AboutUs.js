@@ -26,7 +26,7 @@ const AboutUs = () => {
                     </span>
         </span>
             </div>
-            <img src={aboutUsImage} alt={'aboutUsImage'} className="filter grayscale m-[50px]"/>
+            <img src={aboutUsImage} alt={'aboutUsImage'} className="filter grayscale m-foko"/>
         </div>
     )
 }
