@@ -29,7 +29,7 @@ export const Layout = () => {
                 </>
                 :
                 <>
-                    <Header/>
+                    {/*<Header/>*/}
                     <Login loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
                     <Footer/>
                 </>

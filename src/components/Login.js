@@ -4,11 +4,18 @@ export const Login = ({loggedIn, setLoggedIn})=> {
 
     return (
         <div className="flex flex-col justify-center items-center h-screen">
-            <img src={logo} alt={'logo'}/>
-            <button className="text-2xl mt-[100px]"
+            <div>
+            <div>
+                <img src={logo} alt={'logo'}/>
+            </div>
+<div>
+            <button className="text-rubik-20 font-rubik mt-[128px]"
             onClick={()=>setLoggedIn(!loggedIn)}
-            >password &#62;</button>
+            >PASSWORD &#62;</button>
+</div>
+            </div>
         </div>
+
     )
 }
 

@@ -3,6 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* src/index.css or src/App.css */
+@font-face {
+  font-family: 'rubik'; /* Custom name for the font */
+  src: url('/public/fonts/Rubik/static/Rubik-Light.ttf') format('woff2'),
+  url('/public/fonts/Rubik/static/Rubik-Light.ttf') format('woff'),
+  url('/public/fonts/Rubik/static/Rubik-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

@@ -48,7 +48,7 @@ const FullScreenSlideshow = () => {
             {/* Left Arrow */}
             <button
                 onClick={prevSlide}
-                className="absolute left-0 top-1/2 w-1/4 h-screen transform -translate-y-1/2 bg-black bg-opacity-0 text-white hover:bg-opacity-5"
+                className="absolute left-0 top-1/2 w-1/4 h-screen transform -translate-y-1/2 bg-black bg-opacity-0 text-white hover:bg-opacity-0"
             >
                 <img src={leftArrow} alt={'previous slide'} className="m-foko"/>
             </button>
@@ -56,23 +56,23 @@ const FullScreenSlideshow = () => {
             {/* Right Arrow */}
             <button
                 onClick={nextSlide}
-                className="absolute right-0 top-1/2 w-1/4 h-screen transform -translate-y-1/2 bg-black bg-opacity-0 text-white hover:bg-opacity-5"
+                className="absolute right-0 top-1/2 w-1/4 h-screen transform -translate-y-1/2 bg-black bg-opacity-0 text-white hover:bg-opacity-0"
             >
                 <img src={rightArrow} alt={'next slide'} className="flex justify-self-end m-foko"/>
             </button>
 
             {/* Dots Navigation */}
-            <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                {images.map((_, i) => (
-                    <div
-                        key={i}
-                        onClick={() => setIndex(i)}
-                        className={`w-3 h-3 rounded-full cursor-pointer ${
-                            index === i ? "bg-white" : "bg-gray-400"
-                        }`}
-                    ></div>
-                ))}
-            </div>
+            {/*<div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2">*/}
+            {/*    {images.map((_, i) => (*/}
+            {/*        <div*/}
+            {/*            key={i}*/}
+            {/*            onClick={() => setIndex(i)}*/}
+            {/*            className={`w-3 h-3 rounded-full cursor-pointer ${*/}
+            {/*                index === i ? "bg-white" : "bg-gray-400"*/}
+            {/*            }`}*/}
+            {/*        ></div>*/}
+            {/*    ))}*/}
+            {/*</div>*/}
         </div>
     );
 };
