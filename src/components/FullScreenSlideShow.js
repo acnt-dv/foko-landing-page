@@ -62,17 +62,17 @@ const FullScreenSlideshow = () => {
             </button>
 
             {/* Dots Navigation */}
-            <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                {images.map((_, i) => (
-                    <div
-                        key={i}
-                        onClick={() => setIndex(i)}
-                        className={`w-3 h-3 rounded-full cursor-pointer ${
-                            index === i ? "bg-white" : "bg-gray-400"
-                        }`}
-                    ></div>
-                ))}
-            </div>
+            {/*<div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2">*/}
+            {/*    {images.map((_, i) => (*/}
+            {/*        <div*/}
+            {/*            key={i}*/}
+            {/*            onClick={() => setIndex(i)}*/}
+            {/*            className={`w-3 h-3 rounded-full cursor-pointer ${*/}
+            {/*                index === i ? "bg-white" : "bg-gray-400"*/}
+            {/*            }`}*/}
+            {/*        ></div>*/}
+            {/*    ))}*/}
+            {/*</div>*/}
         </div>
     );
 };
