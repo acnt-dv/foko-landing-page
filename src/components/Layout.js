@@ -8,6 +8,7 @@ import FullPageMenu from "./FullPageMenu";
 import BackToTop from "./BackToTop";
 import FullScreenSlideshow from "./FullScreenSlideShow";
 import ContactUs from "./ContactUs";
+import Works from "./Works";
 
 export const Layout = () => {
     const [loggedIn, setLoggedIn] = useState(false);
@@ -23,6 +24,7 @@ export const Layout = () => {
                     <FullScreenSlideshow />
                     <AboutUs/>
                     <ContactUs/>
+                    <Works/>
                     <Footer className="z-20"/>
                     <FullPageMenu isOpen={menuOpen} onClose={toggleMenu} />
                     <BackToTop />
