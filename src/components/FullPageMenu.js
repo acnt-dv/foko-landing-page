@@ -1,14 +1,13 @@
 import React from 'react';
 import logo from "../statics/png/foko-logo.png";
+import {useNavigate} from "react-router-dom";
 
 const FullPageMenu = ({isOpen, onClose}) => {
-    return (<div
-            className={`fixed inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center transition-opacity duration-500 ease-in-out ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
-        >
-            <button
-                onClick={onClose}
-                className="absolute top-4 right-4 text-white text-6xl"
-            >
+    const navigate = useNavigate();
+
+    return (
+        <div className={`z-10 fixed inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center transition-opacity duration-500 ease-in-out ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+            <button onClick={onClose} className="absolute top-4 right-4 text-white text-6xl">
                 &times;
             </button>
 
@@ -19,10 +18,18 @@ const FullPageMenu = ({isOpen, onClose}) => {
 
                 <nav>
                     <ul className="flex flex-col xl:flex-row w-1/2 space-y-12 xl:space-y-0 xl:space-x-24 text-center m-[50px]">
-                        <li className="text-white text-3xl hover:underline"><a href="#home">Home</a></li>
-                        <li className="text-white text-3xl hover:underline"><a href="#work">Work</a></li>
-                        <li className="text-white text-3xl hover:underline"><a href="#studio">Studio</a></li>
-                        <li className="text-white text-3xl hover:underline"><a href="#contact">Contact</a></li>
+                        <li className="text-white text-3xl hover:underline">
+                            <a href="#home" onClick={()=> {onClose(); navigate('/')}}>Home</a>
+                        </li>
+                        <li className="text-white text-3xl hover:underline">
+                            <a href="#work" onClick={() =>{onClose(); navigate('/works')}}>Work</a>
+                        </li>
+                        <li className="text-white text-3xl hover:underline">
+                            <a href="#studio" onClick={() =>{onClose(); navigate('/workItems')}}>Studio</a>
+                        </li>
+                        <li className="text-white text-3xl hover:underline">
+                            <a href="#contact" >Contact</a>
+                        </li>
                     </ul>
                 </nav>
             </div>

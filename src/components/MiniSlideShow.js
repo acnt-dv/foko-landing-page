@@ -30,7 +30,7 @@ const FullScreenSlideshow = () => {
     };
 
     return (
-        <div className="relative w-1/2 h-1/4 overflow-hidden">
+        <div className="relative w-1/2 h-[33vh] overflow-hidden">
             {/* Image Transition */}
             <AnimatePresence mode="wait">
                 <motion.img
