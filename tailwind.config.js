@@ -9,12 +9,15 @@ module.exports = {
             },
             margin: {
                 foko: '50px',
+                fokoMin: '30px'
             },
             fontFamily: {
-                rubik: ['rubik', 'sans-serif'],  // Use the name you defined in @font-face
+                rubik: ['Rubik', 'sans-serif'],  // Use the name you defined in @font-face
+                helvetica: ['Helvetica', 'sans-serif'],  // Use the name you defined in @font-face
             },
             fontSize: {
-                'rubik-20': '20px', // Custom font size for "MyFont"
+                '10': '10px', // Custom font size for "MyFont"
+                '20': '20px', // Custom font size for "MyFont"
             },
         },
     },

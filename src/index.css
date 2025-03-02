@@ -5,12 +5,21 @@
 
 /* src/index.css or src/App.css */
 @font-face {
-  font-family: 'rubik'; /* Custom name for the font */
-  src: url('/public/fonts/Rubik/static/Rubik-Light.ttf') format('woff2'),
-  url('/public/fonts/Rubik/static/Rubik-Light.ttf') format('woff'),
-  url('/public/fonts/Rubik/static/Rubik-Light.ttf') format('truetype');
+  font-family: 'Rubik';
+  src: url('/public/fonts/Rubik/static/Rubik-Light.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/public/fonts/Helvetica/Helvetica.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  @apply font-helvetica
 }
 
 body {

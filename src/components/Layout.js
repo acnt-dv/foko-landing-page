@@ -1,13 +1,10 @@
+import {React, useState} from "react";
+import {Outlet} from "react-router-dom";
 import Header from './Header';
 import Footer from './Footer';
 import Login from './Login';
-
-import {React, useState} from "react";
-import AboutUs from "./AboutUs";
 import FullPageMenu from "./FullPageMenu";
 import BackToTop from "./BackToTop";
-import FullScreenSlideshow from "./FullScreenSlideShow";
-import ContactUs from "./ContactUs";
 
 export const Layout = () => {
     const [loggedIn, setLoggedIn] = useState(false);
@@ -19,17 +16,14 @@ export const Layout = () => {
         <div className="flex flex-col items-center justify-center bg-foko">
             {loggedIn ?
                 <>
-                    <Header className="z-10" menuToggle={toggleMenu}/>
-                    <FullScreenSlideshow />
-                    <AboutUs/>
-                    <ContactUs/>
-                    <Footer className="z-20"/>
-                    <FullPageMenu isOpen={menuOpen} onClose={toggleMenu} />
+                    <Header menuToggle={toggleMenu}/>
+                    <FullPageMenu isOpen={menuOpen} onClose={toggleMenu}/>
+                    <Outlet />
                     <BackToTop />
+                    <Footer />
                 </>
                 :
                 <>
-                    {/*<Header/>*/}
                     <Login loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
                     <Footer/>
                 </>
