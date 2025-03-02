@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 const Works = () => {
-    const [active, setActive] = useState("all");
+    const [active, setActive] = useState("RESIDENTIAL");
 
     return (
         <div className="flex w-full h-screen items-center justify-center text-black">
@@ -40,15 +40,15 @@ const Works = () => {
             <div className="flex flex-col w-[75%] h-3/4">
                 <div
                     className="grid auto-cols-auto grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-1 px-12 w-full max-w-8xl overflow-auto">
-                    <div className="h-[208px] bg-gray-900 flex items-center justify-center text-white"></div>
-                    <div className="h-[208px] bg-gray-500 flex items-center justify-center text-white"></div>
-                    <div className="h-[208px] bg-gray-900 flex items-center justify-center text-white"></div>
-                    <div className="h-[208px] bg-gray-500 flex items-center justify-center text-white"></div>
-                    <div className="h-[208px] bg-gray-500 flex items-center justify-center text-white"></div>
-                    <div className="h-[208px] bg-gray-500 flex items-center justify-center text-white"></div>
-                    <div className="h-[208px] bg-gray-500 flex items-center justify-center text-white"></div>
-                    <div className="h-[208px] bg-gray-900 flex items-center justify-center text-white"></div>
-                    <div className="h-[208px] bg-gray-900 flex items-center justify-center text-white"></div>
+                    <div className="h-[208px] bg-gray-900 flex items-center justify-center text-white"/>
+                    <div className="h-[208px] bg-gray-500 flex items-center justify-center text-white"/>
+                    <div className="h-[208px] bg-gray-900 flex items-center justify-center text-white"/>
+                    <div className="h-[208px] bg-gray-500 flex items-center justify-center text-white"/>
+                    <div className="h-[208px] bg-gray-500 flex items-center justify-center text-white"/>
+                    <div className="h-[208px] bg-gray-500 flex items-center justify-center text-white"/>
+                    <div className="h-[208px] bg-gray-500 flex items-center justify-center text-white"/>
+                    <div className="h-[208px] bg-gray-900 flex items-center justify-center text-white"/>
+                    <div className="h-[208px] bg-gray-900 flex items-center justify-center text-white"/>
                 </div>
             </div>
             <div className="flex flex-col w-[15%] h-3/4">
