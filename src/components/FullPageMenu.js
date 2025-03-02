@@ -13,22 +13,22 @@ const FullPageMenu = ({isOpen, onClose}) => {
 
             <div className="flex flex-col xl:flex-row w-full items-center justify-center">
                 <span className='flex w-1/2 justify-center items-center m-[50px]'>
-                    <img src={logo} alt={'logo'} className='w-[250px] h-[250px] filter brightness-0 invert'/>
+                    <img src={logo} alt={'logo'} className='w-[130px] h-[130px] filter brightness-0 invert'/>
                 </span>
 
                 <nav>
                     <ul className="flex flex-col xl:flex-row w-1/2 space-y-12 xl:space-y-0 xl:space-x-24 text-center m-[50px]">
-                        <li className="text-white text-3xl hover:underline">
-                            <a href="#home" onClick={()=> {onClose(); navigate('/')}}>Home</a>
+                        <li className="text-white text-20 hover:underline">
+                            <a href="#home" onClick={()=> {onClose(); navigate('/')}}>HOME</a>
                         </li>
-                        <li className="text-white text-3xl hover:underline">
-                            <a href="#work" onClick={() =>{onClose(); navigate('/works')}}>Work</a>
+                        <li className="text-white text-20 hover:underline">
+                            <a href="#work" onClick={() =>{onClose(); navigate('/works')}}>WORK</a>
                         </li>
-                        <li className="text-white text-3xl hover:underline">
-                            <a href="#studio" onClick={() =>{onClose(); navigate('/workItems')}}>Studio</a>
+                        <li className="text-white text-20 hover:underline">
+                            <a href="#studio" onClick={() =>{onClose(); navigate('/workItems')}}>STUDIO</a>
                         </li>
-                        <li className="text-white text-3xl hover:underline">
-                            <a href="#contact" >Contact</a>
+                        <li className="text-white text-20 hover:underline">
+                            <a href="#contact" >CONTACT</a>
                         </li>
                     </ul>
                 </nav>

@@ -9,7 +9,7 @@ module.exports = {
             },
             margin: {
                 foko: '50px',
-                fokoMin: '30px'
+                'foko-sm': '30px'
             },
             fontFamily: {
                 rubik: ['Rubik', 'sans-serif'],  // Use the name you defined in @font-face

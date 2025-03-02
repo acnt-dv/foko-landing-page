@@ -9,7 +9,7 @@ export const Login = ({loggedIn, setLoggedIn})=> {
                 <img src={logo} alt={'logo'}/>
             </div>
 <div>
-            <button className="text-rubik-20 font-rubik mt-[128px]"
+            <button className="text-20 font-rubik mt-[128px]"
             onClick={()=>setLoggedIn(!loggedIn)}
             >PASSWORD &#62;</button>
 </div>
