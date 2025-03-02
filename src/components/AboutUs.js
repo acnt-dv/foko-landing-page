@@ -3,10 +3,10 @@ import aboutUsImage from '../statics/png/about-us.png';
 const AboutUs = () => {
     return (
         <div className="flex flex-col xl:flex-row h-screen items-center justify-center">
-            <h1 className="text-lg hidden xl:block xl:text-8xl m-[50px]">About FOKO</h1>
+            <h1 className="text-lg hidden xl:block xl:text-4xl left-[50px] m-[50px]">About FOKO</h1>
 
             <div className='flex'>
-                <h1 className="text-lg block xl:hidden m-[50px]">About FOKO</h1>
+                <h1 className="text-lg block xl:hidden left-[50px] m-[50px]">About FOKO</h1>
                 <span className="flex flex-col w-full justify-center items-center text-justify">
                     <p className="m-[50px] text-lg max-w-[450px]">FOKO Studio is a Los Angeles-based architecture and interior design firm.
                         Our studio specializes in crafting bespoke, high-end residential and commercial
