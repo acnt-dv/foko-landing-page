@@ -17,7 +17,9 @@ module.exports = {
             },
             fontSize: {
                 '10': '10px', // Custom font size for "MyFont"
+                '16': '16px',
                 '20': '20px', // Custom font size for "MyFont"
+                '30': '30px',
             },
         },
     },
