@@ -25,7 +25,7 @@ const FullPageMenu = ({isOpen, onClose}) => {
                             <a href="#work" onClick={() =>{onClose(); navigate('/works')}}>WORK</a>
                         </li>
                         <li className="text-white text-20 hover:underline">
-                            <a href="#studio" onClick={() =>{onClose(); navigate('/workItems')}}>STUDIO</a>
+                            <a href="#studio" onClick={() =>{onClose(); navigate('/studio')}}>STUDIO</a>
                         </li>
                         <li className="text-white text-20 hover:underline">
                             <a href="#contact" >CONTACT</a>

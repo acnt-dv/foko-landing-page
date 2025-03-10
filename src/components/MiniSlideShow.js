@@ -1,13 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion"; // Optional for smooth transition
-import image from "../statics/png/main-title.png";
+import image01 from "../statics/png/projects/01/01.png";
+import image02 from "../statics/png/projects/01/02.png";
+import image03 from "../statics/png/projects/01/03.png";
+import image04 from "../statics/png/projects/01/04.png";
+import image05 from "../statics/png/projects/01/05.png";
+import image06 from "../statics/png/projects/01/06.png";
+import image07 from "../statics/png/projects/01/07.png";
 import leftArrow from "../statics/svg/left-arrow.svg";
 import rightArrow from "../statics/svg/right-arrow.svg";
 
 const images = [
-    image,
-    image,
-    image,
+    image01,
+    image02,
+    image03,
+    image04,
+    image05,
+    image06,
+    image07,
 ];
 
 const MiniScreenSlideshow = () => {

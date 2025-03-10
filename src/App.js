@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Works from "./components/Works";
 import WorkItems from "./components/WorkItems";
 import Home from "./components/Home";
+import Studio from "./components/Studio";
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                         <Route index element={<Home/>}/>
                         <Route path="/works" element={<Works/>}/>
                         <Route path="/workItems" element={<WorkItems/>}/>
+                        <Route path="/studio" element={<Studio/>}/>
                     </Route>
                 </Routes>
             </div>
