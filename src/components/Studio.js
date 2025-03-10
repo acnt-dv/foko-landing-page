@@ -1,4 +1,5 @@
 import aboutUsImage from '../statics/png/about-us.png';
+import ProfileCard from "./ProfileCard";
 
 const AboutUs = () => {
     return (
@@ -47,7 +48,7 @@ const AboutUs = () => {
                     </p>
                 </span>
             </div>
-
+            <ProfileCard />
         </div>)
 }
 
