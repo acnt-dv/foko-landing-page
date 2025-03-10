@@ -10,7 +10,7 @@ const images = [
     image,
 ];
 
-const FullScreenSlideshow = () => {
+const MiniScreenSlideshow = () => {
     const [index, setIndex] = useState(0);
 
     // Auto-slide every 5 seconds
@@ -30,7 +30,7 @@ const FullScreenSlideshow = () => {
     };
 
     return (
-        <div className="relative w-1/2 h-[33vh] overflow-hidden">
+        <div className="relative w-full h-[33vh]">
             {/* Image Transition */}
             <AnimatePresence mode="wait">
                 <motion.img
@@ -48,7 +48,7 @@ const FullScreenSlideshow = () => {
             {/* Left Arrow */}
             <button
                 onClick={prevSlide}
-                className="absolute left-0 top-1/2 w-1/4 h-screen transform -translate-y-1/2 bg-black bg-opacity-0 text-white hover:bg-opacity-5"
+                className="absolute left-0 top-1/2 w-1/4  transform -translate-y-1/2 bg-black bg-opacity-0 text-white hover:bg-opacity-0"
             >
                 <img src={leftArrow} alt={'previous slide'} className="m-foko"/>
             </button>
@@ -56,19 +56,19 @@ const FullScreenSlideshow = () => {
             {/* Right Arrow */}
             <button
                 onClick={nextSlide}
-                className="absolute right-0 top-1/2 w-1/4 h-screen transform -translate-y-1/2 bg-black bg-opacity-0 text-white hover:bg-opacity-5"
+                className="absolute right-0 top-1/2 w-1/4 transform -translate-y-1/2 bg-black bg-opacity-0 text-white hover:bg-opacity-0"
             >
                 <img src={rightArrow} alt={'next slide'} className="flex justify-self-end m-foko"/>
             </button>
 
              {/*Dots Navigation*/}
-            <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 flex space-x-2">
                 {images.map((_, i) => (
                     <div
                         key={i}
                         onClick={() => setIndex(i)}
                         className={`w-3 h-3 rounded-full cursor-pointer ${
-                            index === i ? "bg-white" : "bg-gray-400"
+                            index === i ? "bg-black" : "border-2 border-black bg-transparent"
                         }`}
                     ></div>
                 ))}
@@ -77,4 +77,4 @@ const FullScreenSlideshow = () => {
     );
 };
 
-export default FullScreenSlideshow;
+export default MiniScreenSlideshow;
