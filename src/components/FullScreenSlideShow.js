@@ -30,7 +30,7 @@ const FullScreenSlideshow = () => {
     };
 
     return (
-        <div className="relative w-full h-screen overflow-hidden">
+        <div className="relative w-full h-[75vh] xl:h-screen overflow-hidden">
             {/* Image Transition */}
             <AnimatePresence mode="wait">
                 <motion.img
@@ -61,18 +61,6 @@ const FullScreenSlideshow = () => {
                 <img src={rightArrow} alt={'next slide'} className="flex justify-self-end m-foko"/>
             </button>
 
-            {/* Dots Navigation */}
-            {/*<div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2">*/}
-            {/*    {images.map((_, i) => (*/}
-            {/*        <div*/}
-            {/*            key={i}*/}
-            {/*            onClick={() => setIndex(i)}*/}
-            {/*            className={`w-3 h-3 rounded-full cursor-pointer ${*/}
-            {/*                index === i ? "bg-white" : "bg-gray-400"*/}
-            {/*            }`}*/}
-            {/*        ></div>*/}
-            {/*    ))}*/}
-            {/*</div>*/}
         </div>
     );
 };
