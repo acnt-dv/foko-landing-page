@@ -48,13 +48,13 @@ export const Title = () => {
                 className="min-h-[50vh] w-full bg-cover bg-center bg-gray-400"
                 style={{backgroundImage: `url(${image})`}}>
             </div>
-            <div className="flex w-full items-start justify-start xl:justify-center text-black">
+            <div className="flex w-full items-start justify-start sm:justify-center text-black">
                 <div className="flex justify-center items-center mt-[30px] xl:mt-[50px]">
                     <p className="mx-[30px] xl:mx-[50px] font-rubik text-16 xl:text30 text-start break-words text-gray-900 transition-all duration-500"
                        style={{transform: `translateY(${translateY2}px)`,}}>BEL AIR <br/> RESIDENTIAL
                     </p>
                 </div>
-                <div className="flex-col space-y-16 items-center justify-end mr-[30px] xl:justify-center text-black mb-[150px]">
+                <div className="flex-col space-y-16 items-center justify-end mr-[30px] text-black mb-[150px]">
                     <FadingTextBox text={textLines}/>
                     <MiniSlideShow/>
                 </div>

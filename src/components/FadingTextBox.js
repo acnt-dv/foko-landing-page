@@ -46,7 +46,7 @@ const FadingTextBox = ({ text }) => {
     }, [lines.length]);
 
     return (
-        <div className="flex w-full items-center justify-center self-center mt-[50px]">
+        <div className="flex w-full items-center justify-center self-center mt-[30px] xl:mt-[50px]">
             <div
                 ref={scrollBoxRef}
                 className="w-full h-[20vh] overflow-y-auto text-10 xl:text-16 text-justify text-black space-y-2 no-scrollbar"
