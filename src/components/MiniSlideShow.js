@@ -60,7 +60,7 @@ const MiniScreenSlideshow = () => {
                 onClick={prevSlide}
                 className="absolute left-0 top-1/2 w-1/4  transform -translate-y-1/2 bg-black bg-opacity-0 text-white hover:bg-opacity-0"
             >
-                <img src={leftArrow} alt={'previous slide'} className="m-foko"/>
+                <img src={leftArrow} alt={'previous slide'} className="m-[30px] md:m-foko"/>
             </button>
 
             {/* Right Arrow */}
@@ -68,19 +68,19 @@ const MiniScreenSlideshow = () => {
                 onClick={nextSlide}
                 className="absolute right-0 top-1/2 w-1/4 transform -translate-y-1/2 bg-black bg-opacity-0 text-white hover:bg-opacity-0"
             >
-                <img src={rightArrow} alt={'next slide'} className="flex justify-self-end m-foko"/>
+                <img src={rightArrow} alt={'next slide'} className="flex justify-self-end m-[30px] md:m-foko"/>
             </button>
 
              {/*Dots Navigation*/}
             <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 flex space-x-2">
                 {images.map((_, i) => (
-                    <div
+                    <span
                         key={i}
                         onClick={() => setIndex(i)}
-                        className={`w-3 h-3 rounded-full cursor-pointer ${
+                        className={`w-[10px] h-[10px] rounded-full cursor-pointer ${
                             index === i ? "bg-black" : "border-2 border-black bg-transparent"
                         }`}
-                    ></div>
+                    ></span>
                 ))}
             </div>
         </div>

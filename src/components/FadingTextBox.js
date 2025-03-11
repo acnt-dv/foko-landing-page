@@ -49,14 +49,14 @@ const FadingTextBox = ({ text }) => {
         <div className="flex w-full items-center justify-center self-center mt-[30px] xl:mt-[50px]">
             <div
                 ref={scrollBoxRef}
-                className="w-full h-[20vh] overflow-y-auto text-10 xl:text-16 text-justify text-black space-y-2 no-scrollbar"
+                className="w-full h-[20vh] overflow-y-auto text-10 md:text-16 text-justify text-black space-y-4 no-scrollbar"
             >
                 {/* Render the text as word-wrapped lines */}
                 {lines.map((line, index) => (
                     <p
                         key={index}
-                        className="transition-opacity duration-300"
-                        style={{ opacity: opacities[index] }}
+                        className="transition-opacity duration-300 text-justify leading-relaxed w-full mx-auto"
+                        style={{ opacity: opacities[index] , textAlign: "justify", hyphens: "auto" }}
                     >
                         {line}
                     </p>

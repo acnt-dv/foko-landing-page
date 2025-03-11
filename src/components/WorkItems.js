@@ -9,19 +9,14 @@ export const Title = () => {
     const [translateY2, setTranslateY2] = useState(0); // Second paragraph (moves down)
 
     const textLines =
-        `Welcome to FOKO STUDIO , where innovation meets tradition in the world of architecture. 
-        Our team of passionate architects and designers is dedicated to transforming spaces into 
-        timeless masterpieces. With a blend of cutting-edge technology and sustainable practices, 
-        we create environments that inspire and endure. At [Your Firm’s Name], we believe in the 
-        power of collaboration and creativity. Our projects... Welcome to FOKO STUDIO , where innovation 
-        meets tradition in the world of architecture. 
-        Our team of passionate architects and designers is dedicated to transforming
-        spaces into timeless masterpieces. With a blend of cutting-edge technology and sustainable
-        practices, we create environments that inspire and endure. At [Your Firm’s Name], we believe in
-        the power of collaboration and creativity. Our projects...dedicated to transforming spaces into
-        timeless masterpieces. With a blend of cutting-edge technology and sustainable practices, we
-        create environments that inspire and endure. At [Your Firm’s Name], we believe in the power of
-        collaboration and creativity. Our project`
+        `Welcome to FOKO STUDIO , where innovation meets tradition in the world of architecture. Our team of passionate architects and designers is 
+        dedicated to transforming spaces into timeless masterpieces. With a blend of cutting-edge technology and sustainable practices, we create 
+        environments that inspire and endure. At [Your Firm’s Name], we believe in the power of collaboration and creativity. Our projects... Welcome to 
+        FOKO STUDIO , where innovation meets tradition in the world of architecture. Our team of passionate architects and designers is dedicated to 
+        transforming spaces into timeless masterpieces. With a blend of cutting-edge technology and sustainable practices, we create environments that 
+        inspire and endure. At [Your Firm’s Name], we believe in the power of collaboration and creativity. Our projects...dedicated to transforming spaces
+        into timeless masterpieces. With a blend of cutting-edge technology and sustainable practices, we create environments that inspire and endure. At 
+        [Your Firm’s Name], we believe in the power of collaboration and creativity. Our project`
 
 
     useEffect(() => {
@@ -49,7 +44,7 @@ export const Title = () => {
                 style={{backgroundImage: `url(${image})`}}>
             </div>
             <div className="flex w-full items-start justify-start sm:justify-center text-black">
-                <div className="flex justify-center items-center mt-[30px] xl:mt-[50px]">
+                <div className="flex justify- items-center mt-[30px] xl:mt-[50px]">
                     <p className="mx-[30px] xl:mx-[50px] font-rubik text-16 xl:text30 text-start break-words text-gray-900 transition-all duration-500"
                        style={{transform: `translateY(${translateY2}px)`,}}>BEL AIR <br/> RESIDENTIAL
                     </p>

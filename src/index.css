@@ -45,3 +45,10 @@ code {
     scrollbar-width: none; /* Firefox */
   }
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
