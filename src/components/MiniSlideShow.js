@@ -20,7 +20,7 @@ const images = [
     image07,
 ];
 
-const MiniScreenSlideshow = () => {
+const  MiniScreenSlideshow = () => {
     const [index, setIndex] = useState(0);
 
     // Auto-slide every 5 seconds
@@ -40,7 +40,7 @@ const MiniScreenSlideshow = () => {
     };
 
     return (
-        <div className="relative w-full h-[33vh]">
+        <div className="relative w-full h-auto aspect-[2/1]">
             {/* Image Transition */}
             <AnimatePresence mode="wait">
                 <motion.img
@@ -60,7 +60,7 @@ const MiniScreenSlideshow = () => {
                 onClick={prevSlide}
                 className="absolute left-0 top-1/2 w-1/4  transform -translate-y-1/2 bg-black bg-opacity-0 text-white hover:bg-opacity-0"
             >
-                <img src={leftArrow} alt={'previous slide'} className="m-[30px] md:m-foko"/>
+                <img src={leftArrow} alt={'previous slide'} className="w-[15px] h-[15px] md:w-[20px] md:h-[20px] m-[10px] md:m-foko"/>
             </button>
 
             {/* Right Arrow */}
@@ -68,7 +68,7 @@ const MiniScreenSlideshow = () => {
                 onClick={nextSlide}
                 className="absolute right-0 top-1/2 w-1/4 transform -translate-y-1/2 bg-black bg-opacity-0 text-white hover:bg-opacity-0"
             >
-                <img src={rightArrow} alt={'next slide'} className="flex justify-self-end m-[30px] md:m-foko"/>
+                <img src={rightArrow} alt={'next slide'} className="flex justify-self-end w-[15px] h-[15px] md:w-[20px] md:h-[20px] m-[10px] md:m-foko"/>
             </button>
 
              {/*Dots Navigation*/}
@@ -78,7 +78,7 @@ const MiniScreenSlideshow = () => {
                         key={i}
                         onClick={() => setIndex(i)}
                         className={`w-[10px] h-[10px] rounded-full cursor-pointer ${
-                            index === i ? "bg-black" : "border-2 border-black bg-transparent"
+                            index === i ? "bg-black" : "border-[1px] border-black bg-transparent"
                         }`}
                     ></span>
                 ))}

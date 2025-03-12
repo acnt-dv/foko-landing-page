@@ -1,91 +1,58 @@
-import React, { useState } from "react";
-import image01 from "../statics/png/projects/pr01.png";
-import image02 from "../statics/png/projects/pr02.png";
-import image03 from "../statics/png/projects/pr03.png";
-import image04 from "../statics/png/projects/pr04.png";
-import image05 from "../statics/png/projects/pr05.png";
-import image06 from "../statics/png/projects/pr06.png";
-import image07 from "../statics/png/projects/pr07.png";
-import {useNavigate} from "react-router-dom";
+import image from '../statics/png/main-title.png';
+import React, {useEffect, useState} from "react";
+import MiniSlideShow from "./MiniSlideShow";
+import FadingTextBox from "./FadingTextBox";
 
-const images = [
-    { src: image01, category: "RESIDENTIAL" },
-    { src: image02, category: "RESIDENTIAL" },
-    { src: image03, category: "RESIDENTIAL" },
-    { src: image04, category: "COMMERCIAL" },
-    { src: image05, category: "COMMERCIAL" },
-    { src: image06, category: "COMMERCIAL" },
-    { src: image07, category: "COMMERCIAL" },
-];
+export const Works = () => {
+    const [translateY, setTranslateY] = useState(0);
 
-const Works = () => {
-    const navigate = useNavigate();
-    const [active, setActive] = useState("ALL");
+    const textLines =
+        `Welcome to FOKO STUDIO , where innovation meets tradition in the world of architecture. Our team of passionate architects and designers is 
+        dedicated to transforming spaces into timeless masterpieces. With a blend of cutting-edge technology and sustainable practices, we create 
+        environments that inspire and endure. At [Your Firm’s Name], we believe in the power of collaboration and creativity. Our projects... Welcome to 
+        FOKO STUDIO , where innovation meets tradition in the world of architecture. Our team of passionate architects and designers is dedicated to 
+        transforming spaces into timeless masterpieces. With a blend of cutting-edge technology and sustainable practices, we create environments that 
+        inspire and endure. At [Your Firm’s Name], we believe in the power of collaboration and creativity. Our projects...dedicated to transforming spaces
+        into timeless masterpieces. With a blend of cutting-edge technology and sustainable practices, we create environments that inspire and endure. At 
+        [Your Firm’s Name], we believe in the power of collaboration and creativity. Our project`
+
+
+    useEffect(() => {
+        const handleScroll = () => {
+            // Get the current scroll position
+            const position = window.scrollY;
+
+            // Limit the movement to 3/4 of the screen height
+            const maxTranslate = window.innerHeight * 0.75;
+
+            // Update the scroll position but cap at maxTranslate
+            setTranslateY(Math.min(position , maxTranslate));
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
-        <div className="flex w-full h-screen items-center justify-center gap-8 text-black">
-            {/* Sidebar Buttons */}
+        <div className="flex flex-col w-full bg-foko">
             <div
-                className="flex flex-col w-[10%] h-3/4 xl:border-r xl:border-gray-500 justify-end xl:justify-center
-                xl:ml-foko bg-gradient-to-b from-black via-gray-900 to-gray-100 bg-clip-text text-transparent
-                font-rubik text-16 ml-[30px]">
-
-                {/* RESIDENTIAL Button */}
-                <button
-                    className={`py-2 self-start rounded-md transition-all ${
-                        active === "RESIDENTIAL" ? "text-black font-bold" : "text-gray-400"
-                    }`}
-                    onClick={() => setActive("RESIDENTIAL")}
-                >
-                    RESIDENTIAL
-                </button>
-
-                {/* COMMERCIAL Button */}
-                <button
-                    className={`py-2 self-start rounded-md transition-all ${
-                        active === "COMMERCIAL" ? "text-black font-bold" : "text-gray-400"
-                    }`}
-                    onClick={() => setActive("COMMERCIAL")}
-                >
-                    COMMERCIAL
-                </button>
-
-                {/* ALL Button */}
-                <button
-                    className={`py-2 self-start rounded-md transition-all ${
-                        active === "ALL" ? "text-black font-bold" : "text-gray-400"
-                    }`}
-                    onClick={() => setActive("ALL")}
-                >
-                    ALL
-                </button>
+                className="min-h-[75vh] w-full bg-cover bg-center bg-gray-400"
+                style={{backgroundImage: `url(${image})`}}>
             </div>
-
-            {/* Image Grid */}
-            <div className="flex flex-col w-[75%] h-3/4">
-                <div className="grid auto-cols-auto grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-1 px-12 w-full max-w-8xl overflow-auto scrollbar-hide">
-                    {images.map((image, index) => {
-                        // Apply grayscale based on active filter
-                        const isActive = active === "ALL" || active === image.category;
-                        return (
-                            <div
-                                onClick={()=> {navigate('/workItems')}}
-                                key={index}
-                                className={`h-[208px] bg-gray-900 flex items-center justify-center text-white 
-                                    bg-cover bg-center transition-all duration-500 ${
-                                    isActive ? "grayscale-0" : "grayscale"
-                                }`}
-                                style={{ backgroundImage: `url(${image.src})` }}
-                            ></div>
-                        );
-                    })}
+            <div className="flex w-full items-start justify-start sm:justify-center text-black">
+                <div className="flex justify- items-center mt-[30px] xl:mt-[50px]">
+                    <p className="mt-[150px] mx-[30px] xl:mx-[50px] 2xl:absolute 2xl:left-[50px] font-rubik text-16 xl:text30 text-start break-words -translate-y-1/2 text-gray-900 transition-transform duration-300"
+                       style={{transform: `translateY(${translateY}px)`,}}>BEL AIR <br/> RESIDENTIAL
+                    </p>
+                </div>
+                <div className="flex-col space-y-16 items-center justify-end mr-[30px] md:mr-0 text-black mb-[150px]">
+                    <FadingTextBox text={textLines}/>
+                    <MiniSlideShow/>
                 </div>
             </div>
-
-            {/* Empty Right Column */}
-            <div className="flex flex-col w-[15%] h-3/4"></div>
         </div>
-    );
-};
+    )
+}
 
 export default Works;
+
