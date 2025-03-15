@@ -1,11 +1,12 @@
 import image from '../statics/png/main-title.png';
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import MiniSlideShow from "./MiniSlideShow";
 import FadingTextBox from "./FadingTextBox";
 
 export const Works = () => {
-    const [maxTranslate, setMaxTranslate] = useState(window.innerHeight * 0.75);
+    // const [maxTranslate, setMaxTranslate] = useState(0);
     const [translateY, setTranslateY] = useState(0);
+    const miniSlideRef = useRef(null);
 
     const textLines =
         `Welcome to FOKO STUDIO , where innovation meets tradition in the world of architecture. Our team of passionate architects and designers is 
@@ -18,39 +19,35 @@ export const Works = () => {
         [Your Firm’s Name], we believe in the power of collaboration and creativity. Our project`
 
     useEffect(() => {
-        const updateMaxTranslate = () => {
-            if (window.innerWidth >= 768) {
+        let maxTranslate = 0;
+            if (window.innerWidth <= 768) {
                 // 'md' breakpoint in Tailwind (768px)
-                setMaxTranslate(window.innerHeight * 0.47);
+                maxTranslate=(window.innerHeight * 0.47);
             } else {
-                setMaxTranslate(window.innerHeight * 0.75);
+                maxTranslate=(window.innerHeight * 0.75);
             }
-        };
 
-        // Initial check
-        updateMaxTranslate();
+            const handleScroll = () => {
+                // Get the current scroll position
+                const position = window.scrollY;
+                let maxLimit = maxTranslate;
 
-        // Listen for resize events
-        window.addEventListener("resize", updateMaxTranslate);
-        return () => window.removeEventListener("resize", updateMaxTranslate);
-    }, []);
+                if (miniSlideRef.current) {
+                    const slideShowRect = miniSlideRef.current.getBoundingClientRect();
+                    const bottomLimit = slideShowRect.top + slideShowRect.height - 150; // Adjust offset as needed
 
+                    if (position >= bottomLimit) {
+                        maxLimit = bottomLimit;
+                    }
+                }
 
-    useEffect(() => {
-        const handleScroll = () => {
-            // Get the current scroll position
-            const position = window.scrollY;
+                setTranslateY(Math.min(position, maxLimit));
+            };
 
-            // // Limit the movement to 3/4 of the screen height /75 /47
-            // const maxTranslate = window.innerHeight * 0.47;
-
-            // Update the scroll position but cap at maxTranslate
-            setTranslateY(Math.min(position, maxTranslate));
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+            window.addEventListener("scroll", handleScroll);
+            return () => window.removeEventListener("scroll", handleScroll);
+        }, []
+    );
 
     return (
         <div className="flex flex-col w-full bg-foko">

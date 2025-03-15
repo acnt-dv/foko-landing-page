@@ -49,8 +49,8 @@ const AboutUs = () => {
                     </p>
                 </span>
             </div>
-            <ProfileCard/>
-            <ProfileCard/>
+            <ProfileCard name='JENNY FONTENOT, RA'/>
+            <ProfileCard name='PEGAH KOULAEIAN, LEED AP'/>
             <span className="mb-[50px] md:mb-[50px]"/>
         </div>
     )

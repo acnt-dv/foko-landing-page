@@ -1,7 +1,7 @@
 import React from "react";
 import profileImage from "../statics/png/about-us.png"; // Replace with actual image path
 
-const ProfileCard = () => {
+const ProfileCard = ({name}) => {
     return (
         <div className="flex-col bg-foko min-h-screen justify-start w-3/4">
             <div className="flex flex-col md:flex-row w-full">
@@ -16,7 +16,7 @@ const ProfileCard = () => {
 
                 <div className="w-full md:w-2/3 px-0 my-[30px] md:my-0 md:px-[50px] flex-col justify-items-start">
                     {/* Name and Title */}
-                    <h1 className="font-rubik text-16 md:text-30 font-bold">JENNY FONTENOT, RA</h1>
+                    <h1 className="font-rubik text-16 md:text-30 font-bold">{name}</h1>
                     <h2 className="font-rubik text-16 md:text-30 font-light uppercase mt-2">Co-Founder</h2>
 
                     {/* Description */}
