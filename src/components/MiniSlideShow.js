@@ -9,7 +9,7 @@ import image06 from "../statics/png/projects/01/06.png";
 import image07 from "../statics/png/projects/01/07.png";
 import leftArrow from "../statics/svg/left-arrow.svg";
 import rightArrow from "../statics/svg/right-arrow.svg";
-import close from "../statics/png/close.png";
+import close from "../statics/svg/black-close.svg";
 import plusIcon from "../statics/svg/plus-btn.svg"; // Assuming you have a plus icon
 
 const images = [
@@ -107,16 +107,16 @@ const MiniScreenSlideshow = () => {
             {/* Fullscreen Modal */}
             {showModal && (
                 <div className="w-screen h-screen fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-                    <div className="w-full h-full relative bg-foko p-[50px] max-w-full max-h-full">
+                    <div className="w-full h-full relative bg-foko flex justify-center items-center max-w-full max-h-full">
                         <button
                             onClick={closeModal}
-                            className="absolute top-[30px] right-[30px] md:top-[50px] md:right-[50px]"
+                            className="absolute top-[30px] right-[30px]"
                         >
-                            <img src={close} alt="close" width='30px' height='30px'/>
+                            <img src={close} alt="close" width='30px' height='30px' className="filter grayscale"/>
                         </button>
                         <img
                             src={selectedImage}
-                            alt="Fullscreen Image"
+                            alt="Fullscreen"
                             className="w-full max-h-[80vh] object-contain"
                         />
                     </div>

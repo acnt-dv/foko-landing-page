@@ -1,7 +1,6 @@
 import image from '../statics/png/main-title.png';
 import React, {useEffect, useRef, useState} from "react";
 import MiniSlideShow from "./MiniSlideShow";
-import FadingTextBox from "./FadingTextBox";
 import FadingTextBoxWithMask from "./FadingTextBoxWithMask";
 
 export const Works = () => {

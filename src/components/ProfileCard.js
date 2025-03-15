@@ -3,9 +3,9 @@ import profileImage from "../statics/png/about-us.png"; // Replace with actual i
 
 const ProfileCard = ({name}) => {
     return (
-        <div className="flex-col bg-foko min-h-screen justify-start w-3/4">
+        <div className="flex-col bg-foko min-h-screen justify-start w-[calc(100%-60px)] md:w-3/4">
             <div className="flex flex-col md:flex-row w-full">
-                <div className="relative w-full h-fit aspect-[1/1.5] md:w-1/3 md:max-w-[528px] md:max-h-[698px] p-0 flex flex-col items-center">
+                <div className="relative w-full h-full aspect-[1/1.5] md:w-1/3 md:max-w-[528px] md:max-h-[698px] p-0 flex flex-col items-center">
                     {/* Profile Image */}
                     <img
                         src={profileImage}
@@ -14,7 +14,7 @@ const ProfileCard = ({name}) => {
                     />
                 </div>
 
-                <div className="w-full md:w-2/3 px-0 my-[30px] md:my-0 md:px-[50px] flex-col justify-items-start">
+                <div className="w-full md:w-2/3 px-0 my-[30px] md:my-0 md:pl-[50px] flex-col justify-items-start">
                     {/* Name and Title */}
                     <h1 className="font-rubik text-16 md:text-30 font-bold">{name}</h1>
                     <h2 className="font-rubik text-16 md:text-30 font-light uppercase mt-2">Co-Founder</h2>
