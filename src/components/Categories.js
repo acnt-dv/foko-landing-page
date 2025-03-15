@@ -26,8 +26,8 @@ const Categories = () => {
         <div className="flex w-full h-screen items-center justify-center gap-8 text-black">
             {/* Sidebar Buttons */}
             <div
-                className="flex flex-col w-[10%] h-3/4 xl:border-r xl:border-gray-500 justify-end xl:justify-center
-                xl:ml-foko bg-gradient-to-b from-black via-gray-900 to-gray-100 bg-clip-text text-transparent
+                className="flex flex-col w-[10%] h-3/4 md:border-r md:border-gray-500 justify-end md:justify-center
+                md:ml-foko bg-gradient-to-b from-black via-gray-900 to-gray-100 bg-clip-text text-transparent
                 font-rubik text-16 ml-[30px]">
 
                 {/* RESIDENTIAL Button */}

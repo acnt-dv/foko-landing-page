@@ -9,17 +9,17 @@ const FullPageMenu = ({isOpen, onClose}) => {
     return (
         <div
             className={`z-10 fixed inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center transition-opacity duration-500 ease-in-out ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-            <button onClick={onClose} className="absolute top-[30px] right-[30px] xl:top-[50px] xl:right-[50px]">
+            <button onClick={onClose} className="absolute top-[30px] right-[30px] md:top-[50px] md:right-[50px]">
                 <img src={close} alt="close" width='30px' height='30px'/>
             </button>
 
-            <div className="flex flex-col xl:flex-row w-full items-center justify-center">
+            <div className="flex flex-col md:flex-row w-full items-center justify-center">
                 <span className='flex w-1/2 justify-center items-center m-[50px]'>
                     <img src={logo} alt={'logo'} className='w-[130px] h-[130px] filter brightness-0 invert'/>
                 </span>
 
                 <nav>
-                    <ul className="flex flex-col xl:flex-row w-1/2 space-y-12 xl:space-y-0 xl:space-x-24 text-center m-[50px]">
+                    <ul className="flex flex-col md:flex-row w-1/2 space-y-12 md:space-y-0 md:space-x-24 text-center m-[50px]">
                         <li className="text-white text-20 hover:underline">
                             <a href="#home" onClick={() => {
                                 onClose();

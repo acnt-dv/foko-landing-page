@@ -28,11 +28,11 @@ const BackToTop = () => {
     }, []);
 
     return (
-        <div>
+        <div className="flex w-full justify-center">
             {isVisible && (
                 <button
                     onClick={scrollToTop}
-                    className="fixed bottom-10 p-3 text-white text-2xl rounded-full  transition z-40"
+                    className="fixed bottom-[42px] md:bottom-[50px] p-3 text-white text-2xl rounded-full  transition z-40"
                 >
                     <img src={arrowTop} alt={'back to top'}/>
                 </button>
