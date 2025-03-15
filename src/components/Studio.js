@@ -1,5 +1,5 @@
 import aboutUsImage from '../statics/png/about-us.png';
-// import ProfileCard from "./ProfileCard";
+import ProfileCard from "./ProfileCard";
 
 const AboutUs = () => {
     return (
@@ -41,7 +41,7 @@ const AboutUs = () => {
                     <img src={aboutUsImage} alt={'aboutUsImage'} className="w-fit h-fit mb-0 md:mb-foko md:m-foko"/>
                 </div>
             </div>
-            <div className='flex w-full mb-[100px]'>
+            <div className='flex w-full mb-[30px] md:mb-[50px]'>
                 <h1 className="text-16 font-rubik block absolute left-[30px] text-left mt-foko">OUR <br/> TEAM</h1>
                 <span className="flex flex-col w-full justify-center items-center text-justify my-foko">
                     <p className="mx-[30px] md:mx-[50px] text-10 md:text-16 w-1/2 md:w-9/12 self-end md:self-center">
@@ -49,7 +49,9 @@ const AboutUs = () => {
                     </p>
                 </span>
             </div>
-            {/*<ProfileCard/>*/}
+            <ProfileCard/>
+            <ProfileCard/>
+            <span className="mb-[50px] md:mb-[50px]"/>
         </div>
     )
 }
