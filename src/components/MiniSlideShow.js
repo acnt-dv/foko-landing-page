@@ -9,6 +9,8 @@ import image06 from "../statics/png/projects/01/06.png";
 import image07 from "../statics/png/projects/01/07.png";
 import leftArrow from "../statics/svg/left-arrow.svg";
 import rightArrow from "../statics/svg/right-arrow.svg";
+import close from "../statics/png/close.png";
+import plusIcon from "../statics/svg/plus-btn.svg"; // Assuming you have a plus icon
 
 const images = [
     image01,
@@ -20,8 +22,10 @@ const images = [
     image07,
 ];
 
-const  MiniScreenSlideshow = () => {
+const MiniScreenSlideshow = () => {
     const [index, setIndex] = useState(0);
+    const [showModal, setShowModal] = useState(false);
+    const [selectedImage, setSelectedImage] = useState(null);
 
     // Auto-slide every 5 seconds
     useEffect(() => {
@@ -37,6 +41,16 @@ const  MiniScreenSlideshow = () => {
 
     const prevSlide = () => {
         setIndex((prev) => (prev - 1 + images.length) % images.length);
+    };
+
+    const openModal = (image) => {
+        setSelectedImage(image);
+        setShowModal(true);
+    };
+
+    const closeModal = () => {
+        setShowModal(false);
+        setSelectedImage(null);
     };
 
     return (
@@ -58,9 +72,9 @@ const  MiniScreenSlideshow = () => {
             {/* Left Arrow */}
             <button
                 onClick={prevSlide}
-                className="absolute left-0 top-1/2 w-1/4  transform -translate-y-1/2 bg-black bg-opacity-0 text-white hover:bg-opacity-0"
+                className="absolute left-0 top-1/2 w-1/4 transform -translate-y-1/2 bg-black bg-opacity-0 text-white hover:bg-opacity-0"
             >
-                <img src={leftArrow} alt={'previous slide'} className="w-[15px] h-[15px] md:w-[20px] md:h-[20px] m-[10px] md:m-foko"/>
+                <img src={leftArrow} alt="previous slide" className="w-[15px] h-[15px] md:w-[20px] md:h-[20px] m-[10px] md:m-foko" />
             </button>
 
             {/* Right Arrow */}
@@ -68,21 +82,46 @@ const  MiniScreenSlideshow = () => {
                 onClick={nextSlide}
                 className="absolute right-0 top-1/2 w-1/4 transform -translate-y-1/2 bg-black bg-opacity-0 text-white hover:bg-opacity-0"
             >
-                <img src={rightArrow} alt={'next slide'} className="flex justify-self-end w-[15px] h-[15px] md:w-[20px] md:h-[20px] m-[10px] md:m-foko"/>
+                <img src={rightArrow} alt="next slide" className="flex justify-self-end w-[15px] h-[15px] md:w-[20px] md:h-[20px] m-[10px] md:m-foko" />
             </button>
 
-             {/*Dots Navigation*/}
+            {/* Dots Navigation */}
             <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 flex space-x-2">
                 {images.map((_, i) => (
                     <span
                         key={i}
                         onClick={() => setIndex(i)}
-                        className={`w-[10px] h-[10px] rounded-full cursor-pointer ${
-                            index === i ? "bg-black" : "border-[1px] border-black bg-transparent"
-                        }`}
+                        className={`w-[10px] h-[10px] rounded-full cursor-pointer ${index === i ? "bg-black" : "border-[1px] border-black bg-transparent"}`}
                     ></span>
                 ))}
             </div>
+
+            {/* Plus Icon */}
+            <button
+                onClick={() => openModal(images[index])}
+                className="absolute top-8 left-32 p-2 rounded-full shadow-lg"
+            >
+                <img src={plusIcon} alt="open modal" className="w-[20px] h-[20px]" />
+            </button>
+
+            {/* Fullscreen Modal */}
+            {showModal && (
+                <div className="w-screen h-screen fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+                    <div className="w-full h-full relative bg-foko p-[50px] max-w-full max-h-full">
+                        <button
+                            onClick={closeModal}
+                            className="absolute top-[30px] right-[30px] md:top-[50px] md:right-[50px]"
+                        >
+                            <img src={close} alt="close" width='30px' height='30px'/>
+                        </button>
+                        <img
+                            src={selectedImage}
+                            alt="Fullscreen Image"
+                            className="w-full max-h-[80vh] object-contain"
+                        />
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
