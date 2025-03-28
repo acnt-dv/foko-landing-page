@@ -11,7 +11,8 @@ const apiClient = axios.create({
 export default async (slideId) => {
     try {
         const response = await apiClient.get(`slides/${slideId}`);
-        console.log(response.data);
+        console.log(response?.data);
+        return response?.data;
     } catch (error) {
         console.error('API Error:', error.message);
     }

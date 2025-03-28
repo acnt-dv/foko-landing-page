@@ -8,11 +8,11 @@ const apiClient = axios.create({
     headers: { 'Content-Type': 'application/json' }
 });
 
-export default async () => {
+export default async (projectId) => {
     try {
-        const response = await apiClient.get('/slides');
+        const response = await apiClient.get(`projects/${projectId}`);
         console.log(response?.data);
-        return response?.data;
+        return response?.data
     } catch (error) {
         console.error('API Error:', error.message);
     }
